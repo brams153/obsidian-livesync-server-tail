@@ -41,12 +41,11 @@ CouchDB necesita permisos específicos para manejar la base de datos.
 ```
 
 4. **Exposición segura mediante Tailscale:**
-Una vez que el contenedor esté corriendo, redirige el tráfico de tu IP de Tailscale al servicio local:
+Una vez que el contenedor esté corriendo, redirige el tráfico de tu Tailnet al servicio local:
 
 ```bash
-   # Esto expone tu CouchDB local de forma segura en tu red Tailscale
-   sudo tailscale serve 5984 [http://127.0.0.1:5984](http://127.0.0.1:5984)
-
+# Expone el puerto 5984 local a través de HTTPS en el puerto 443
+sudo tailscale serve --https 443 [http://127.0.0.1:5984](http://127.0.0.1:5984)
 ```
 
 ## ⚙️ Configuración en Obsidian
