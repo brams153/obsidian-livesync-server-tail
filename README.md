@@ -70,3 +70,7 @@ Haz clic en **"Check and Fix database configuration"** y el plugin se encargará
 
 Configuración base inspirada en el proyecto oficial de [Obsidian LiveSync](https://github.com/vrtmrz/obsidian-livesync).
 
+## 🔗 Referencias y Créditos
+Este repositorio es una configuración complementaria para [Obsidian LiveSync](https://github.com/vrtmrz/obsidian-livesync). 
+- El plugin original fue desarrollado por **vrtmrz**. 
+- Esta configuración dockerizada está basada en la documentación oficial de [Own Server Setup](https://github.com/vrtmrz/obsidian-livesync/blob/main/docs/setup_own_server.md).
