@@ -1,0 +1,6 @@
+# Ignorar datos de CouchDB (¡Crucial!)
+data/
+
+# Ignorar archivos de configuración con secretos
+.env
+
