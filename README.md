@@ -47,18 +47,28 @@ Una vez que el contenedor esté corriendo, redirige el tráfico de tu Tailnet al
 # Expone el puerto 5984 local a través de HTTPS en el puerto 443
 sudo tailscale serve --https 443 [http://127.0.0.1:5984](http://127.0.0.1:5984)
 ```
-
 ## ⚙️ Configuración en Obsidian
 
-En el plugin **Self-hosted LiveSync** dentro de Obsidian, configura:
+Existen dos formas de conectar Obsidian con tu servidor. Se recomienda la configuración manual para tener mayor control sobre la base de datos:
 
-* **Remote Server:** `CouchDB`
-* **URI:** `https://<TU-DOMINIO-TAILSCALE>:5984` (O la IP de Tailscale de tu servidor).
-* **Username:** `brams` (o el que definas)
-* **Password:** `Ajmheito1` (¡Cámbiala en producción!)
-* **Database Name:** `obsidian_vault`
+### Configuración Manual
+1. Abre la configuración del plugin **Self-hosted LiveSync** en Obsidian.
+2. Desactiva el asistente automático y elige la configuración manual.
+3. En la sección **Remote Server**, introduce los siguientes datos:
+    * **Remote Server Type:** `CouchDB`
+    * **URI:** `https://<TU-DOMINIO-TAILSCALE>` (Si usaste el puerto 443, no es necesario especificar puerto).
+    * **User:** `<TU_USUARIO_DEFINIDO>`
+    * **Password:** `<TU_CONTRASEÑA_SEGURA>`
+4. En **Database Name**, ingresa el nombre para tu base de datos (ej: `obsidian_vault`).
+5. Haz clic en **"Check and Fix database configuration"**. El plugin validará la conexión y creará los índices necesarios.
+6. Haz clic en **"Apply"** para guardar los cambios.
 
-Haz clic en **"Check and Fix database configuration"** y el plugin se encargará de crear los índices necesarios.
+### Configuración mediante Asistente
+Si prefieres el proceso automatizado:
+1. En el plugin, selecciona **"Setup Wizard"**.
+2. Sigue los pasos e introduce la **URI**, **Usuario** y **Contraseña** cuando se te soliciten.
+3. El asistente detectará automáticamente la base de datos y configurará los parámetros de sincronización por ti.
+
 
 ## 🔒 Seguridad (¡Importante!)
 
